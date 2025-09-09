@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenDoor — Catálogo de imóveis</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a href="./index.html" class="brand">Open<span>Door</span></a>
+    <nav class="nav-links">
+      <a href="./list.html">Ver imóveis</a>
+      <a href="./admin/login.html">Login Admin</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu">☰ Menu</button>
+  </div>
+  <div class="container mobile-menu" id="mobileMenu">
+    <a href="./list.html">Ver imóveis</a>
+    <a href="./admin/login.html">Login Admin</a>
+  </div>
+</header>
+
+  <main class="hero">
+    <div class="hero-content">
+      <h1 class="headline">Abra as portas para um novo morar</h1>
+      <p class="subhead">Alugue ou compre seu próximo lar com filtros simples, fotos nítidas e respostas rápidas.</p>
+      <div class="search-tabs" role="tablist">
+        <button class="tab-button active" data-mode="rent">Alugar</button>
+        <button class="tab-button" data-mode="sale">Comprar</button>
+      </div>
+      <section class="search-card">
+        <form id="searchForm">
+          <div class="search-grid">
+            <div class="form-group">
+              <label for="bairro">Bairro</label>
+              <input id="bairro" name="bairro" placeholder="Ex: Centro, Copacabana" />
+            </div>
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input id="cidade" name="cidade" placeholder="Ex: São Paulo, Rio de Janeiro" />
+            </div>
+            <div class="form-group">
+              <label for="max">Até quanto pode pagar (R$)</label>
+              <input id="max" name="max" type="number" min="0" inputmode="numeric" placeholder="Ex: 3000" />
+            </div>
+            <div class="form-group">
+              <label for="quartos">Quartos</label>
+              <select id="quartos" name="quartos">
+                <option value="">Qualquer</option>
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
+            <div class="search-actions">
+              <div class="meta" id="modeHint">Buscando imóveis para <strong>alugar</strong>.</div>
+              <button class="btn" type="submit">Buscar imóvel</button>
+              <a class="btn ghost" href="./list.html">Ver todos</a>
+            </div>
+          </div>
+          <input type="hidden" id="mode" name="mode" value="rent" />
+        </form>
+      </section>
+    </div>
+  </main>
+  
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> OpenDoor Imobiliária — projeto demo inspirado no QuintoAndar.
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+  <script src="./js/ui.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/client.js"></script>
+</body>
+</html>
