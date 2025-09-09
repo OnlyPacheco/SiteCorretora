@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Admin OpenDoor</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  
+<header class="navbar">
+  <div class="container navbar-inner">
+    <a href="../index.html" class="brand">Open<span>Door</span></a>
+    <nav class="nav-links">
+      <a href="../list.html">Ver imóveis</a>
+      <a href="#">Login Admin</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu">☰ Menu</button>
+  </div>
+  <div class="container mobile-menu" id="mobileMenu">
+    <a href="../list.html">Ver imóveis</a>
+    <a href="#">Login Admin</a>
+  </div>
+</header>
+
+  <main class="page">
+    <div class="container" style="max-width:520px;">
+      <h1>Acesso do administrador</h1>
+      <p class="meta" style="margin:8px 0 16px">Conta predefinida com verificação de hash (SHA‑256) no navegador.</p>
+      <form class="form" id="loginForm">
+        <div class="row">
+          <div class="col-12">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="admin@opendoor.local" required />
+          </div>
+          <div class="col-12">
+            <label for="password">Senha</label>
+            <input id="password" type="password" placeholder="••••••••" required />
+          </div>
+          <div class="col-12">
+            <button class="btn" type="submit">Entrar</button>
+            <a class="btn ghost" href="../index.html" style="margin-left:8px">Voltar</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  
+<footer class="footer">
+  <div class="container">
+    © <span id="year"></span> OpenDoor Imobiliária — projeto demo inspirado no QuintoAndar.
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+  <script src="../js/ui.js"></script>
+  <script src="../js/store.js"></script>
+  <script>
+    // Se já logado, ir ao dashboard
+    if (Store.isAuthed()) window.location.href = "./index.html";
+  </script>
+  <script src="../js/admin-login.js"></script>
+</body>
+</html>
